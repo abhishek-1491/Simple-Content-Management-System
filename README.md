@@ -1,2 +1,5 @@
-# Simple-Content-Management-System
-Company Task
+
+Admin Details :-
+
+username : admin
+password : admin123

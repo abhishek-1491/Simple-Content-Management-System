@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CMS</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        background: #f4f6f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 50px;
+      }
+
+      .card {
+        width: 300px;
+        height: 200px;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        padding-top: 30px;
+        text-align: center;
+
+        transition: 0.3s ease-in-out;
+      }
+
+      .card:hover {
+        scale: 1.1;
+        transition: 0.3s ease-in-out;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      .card h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      .card p {
+        font-size: 15px;
+        margin-bottom: 20px;
+        color: #555;
+      }
+
+      .card button {
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 18px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 15px;
+        transition: background 0.3s;
+      }
+
+      .card button:hover {
+        background: #0056b3;
+      }
+
+      @media (max-width: 480px) {
+        .card h2 {
+          font-size: 20px;
+        }
+        .card p {
+          font-size: 14px;
+        }
+        .container {
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
+          width: 100%;
+          box-sizing: border-box;
+          padding: 0 20px;
+        }
+        .card {
+          width: 100%;
+          background: #fff;
+          border-radius: 12px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+          text-align: center;
+          transition: 0.3s ease-in-out;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div class="container">
+      <div class="card">
+        <h2>Admin</h2>
+        <p>Access the admin panel to manage Articles.</p>
+        <button onclick="navigate('admin')">Go to Admin</button>
+      </div>
+
+      <div class="card">
+        <h2>Public</h2>
+        <p>Browse public Articles.</p>
+        <button onclick="navigate('public')">Go to Public</button>
+      </div>
+    </div>
+
+    <script>
+      function navigate(role) {
+        if (role === "admin") {
+          window.location.href = "admin/dashboard.php";
+        } else {
+          window.location.href = "public/index.php";
+        }
+      }
+    </script>
+  </body>
+</html>
